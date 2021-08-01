@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -14,8 +26,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #6441a5;
+  max-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +40,92 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+  background-color: #6441a5;
+}
+
+.modal-header {
+  background-color: #392a53;
+  color:white
+}
+
+#custom-search-input{
+  margin: 3px 20vh;
+  padding: 3px;
+  border: solid 1px #E4E4E4;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+#custom-search-input input{
+  border: 0;
+  box-shadow: none;
+  font-size: 20px;
+
+}
+
+#custom-search-input .input-group-btn{
+  margin: 2px 0 0 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: #b43636;
+  padding: 0 8px 0 10px;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input .input-group-btn:hover{
+  border: 0;
+  box-shadow: none;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+  font-size: 23px;
+}
+
+.btn{
+  color:#6441a5;
+  background: none;
+  border: none;
+}
+
+.btn:hover{
+  color: white;
+  background: #6441a5;
+  border: #6441a5;
+}
+
+.btn:focus {
+  box-shadow: none;
+  background-color: #815fc0;
+  color: white;
+}
+
+.card .btn:hover, #closeButton:hover{
+  color:#6441a5;
+  background: none;
+  border: none;
+}
+
+.card .btn , #closeButton{
+  color: white;
+  background: #6441a5;
+  border: #6441a5;
+}
+
+
+
+@media (max-width:700px){
+  #custom-search-input{
+    margin: 3px 10vh;
+    
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width:500px){
+  #custom-search-input{
+    margin: 3px 5vh;
+    
   }
 }
