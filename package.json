@@ -21,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "proxy": "lcp --proxyUrl https://api.twitch.tv",
-    "dev": "concurrently \"npm run proxy\" \"npm start\" "
+    "dev": "concurrently \"npm run proxy\" \"npm start\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
