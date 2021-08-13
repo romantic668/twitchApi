@@ -22,6 +22,7 @@ function App() {
 
 
   const fetchData = async (query) => {
+    console.log(process.env.NODE_ENV)
     const res = await axios.post(`https://id.twitch.tv/oauth2/token?client_id=${client}&client_secret=9gti728opbgkdj14btryooeos1mxmk&grant_type=client_credentials`)
     const accessToken = res.data.access_token;
     const result = await axios.get(`http://${domain}/helix/search/channels?query=${query}`, {
