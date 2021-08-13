@@ -4,6 +4,14 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Modal from './components/Modal';
 
+let domain
+if (process.env.NODE_ENV === 'production') {
+  domain = 'api.twitch.tv'
+} else {
+  domain = 'localhost:8010/proxy';
+
+}
+
 function App() {
 
   const [channels, setChannels] = useState([]);
@@ -16,7 +24,7 @@ function App() {
   const fetchData = async (query) => {
     const res = await axios.post(`https://id.twitch.tv/oauth2/token?client_id=${client}&client_secret=9gti728opbgkdj14btryooeos1mxmk&grant_type=client_credentials`)
     const accessToken = res.data.access_token;
-    const result = await axios.get(`http://localhost:8010/proxy/helix/search/channels?query=${query}`, {
+    const result = await axios.get(`http://${domain}/helix/search/channels?query=${query}`, {
       headers: {
 
         "Client-ID": client,
