@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Twitch search app is built using create-react-app and twitch api
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
