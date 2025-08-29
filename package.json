@@ -2,6 +2,7 @@
   "name": "twitchapp",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -9,19 +10,19 @@
     "axios": "^0.21.1",
     "concurrently": "^6.2.0",
     "dotenv": "^10.0.0",
-    "local-cors-proxy": "^1.1.0",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
+    "serve": "node server/index.js",
+    "dev": "concurrently \"npm run serve\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "proxy": "lcp --proxyUrl https://api.twitch.tv",
-    "dev": "concurrently \"npm run proxy\" \"npm start\" "
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1",
+    "sass": "^1.91.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
